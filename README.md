@@ -1,6 +1,8 @@
-# Twilio::Client
+# TwilioClient
 
-TODO: Write a gem description
+Simple interface for initializing with your twilio account credentials and sending a text.  You Can also access the Twilio client directly with TwilioClient.client
+
+Initialize with account sid, account token and a from number
 
 ## Installation
 
@@ -28,7 +30,7 @@ Or install it yourself as:
 
 ## Public Class Methods
 
-   * TwilioClient.send_text(from, to, body)
+   * TwilioClient.send_text(to, body)
    * TwilioClient.client (to access the twilio client directly)
 
 ## Contributing
