@@ -33,6 +33,18 @@ Or install it yourself as:
    * TwilioClient.send_text(to, body)
    * TwilioClient.client (to access the twilio client directly)
 
+## Test Mode
+
+  * Stops the supported methods from making API requests (you can still access the raw twilio client directly, which will still make API requests)
+  * Put the client into test mode:
+    ```ruby
+    # put the client into test mode:
+    TwilioClient.test_mode = true
+
+    # take the client out of test mode:
+    TwilioClient.test_mode = false
+    ```
+
 ## Contributing
 
 1. Fork it

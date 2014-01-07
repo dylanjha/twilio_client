@@ -3,7 +3,12 @@ require 'twilio-ruby'
 
 module TwilioClient
 
-  @config = {}
+  @config    = {}
+  @test_mode = false
+
+  def self.test_mode=(boolean)
+    @test_mode = boolean
+  end
 
   def self.configure(opts)
     require_configs(opts)
@@ -21,11 +26,13 @@ module TwilioClient
   end
 
   def self.send_text(to, body)
-    client.account.messages.create(
-      from: @config.fetch(:from),
-      to:   to,
-      body: body,
-    )
+    unless @test_mode
+      client.account.messages.create(
+        from: @config.fetch(:from),
+        to:   to,
+        body: body,
+      )
+    end
   end
 
   private
