@@ -30,8 +30,10 @@ Or install it yourself as:
 
 ## Public Class Methods
 
-   * TwilioClient.send_text(to, body)
-   * TwilioClient.client (to access the twilio client directly)
+   ```ruby
+     TwilioClient.send_text(to, body)
+     TwilioClient.client #to access the twilio client directly
+   ```
 
 ## Test Mode
 
