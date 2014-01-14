@@ -32,10 +32,4 @@ class TestTwilioClient < Test::Unit::TestCase
     TwilioClient.client
   end
 
-  def test_errors
-    assert_raises ArgumentError do
-      TwilioClient.configure({sid: @sid})
-    end
-  end
-
 end

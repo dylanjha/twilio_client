@@ -11,7 +11,6 @@ module TwilioClient
   end
 
   def self.configure(opts)
-    require_configs(opts)
     @config[:sid]   = opts.fetch(:sid)
     @config[:token] = opts.fetch(:token)
     @config[:from]  = opts.fetch(:from)
@@ -37,9 +36,4 @@ module TwilioClient
 
   private
 
-  def self.require_configs(opts)
-    [:sid, :token, :from].each do |key|
-      raise ArgumentError.new "Must Supply a #{key} config" unless opts[key]
-    end
-  end
 end
